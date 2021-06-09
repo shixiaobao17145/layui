@@ -691,7 +691,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form', 'util'], function(exports){
         
     if(options.url){ //Ajax请求
       var params = {};
-      if(request.pageName !== undefined){
+      if(!request.ignore){
         params[request.pageName] = request.pageFn? request.pageFn(curr, options):curr;
         params[request.limitName] = options.limit;
       }
